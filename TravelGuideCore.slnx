@@ -1,0 +1,13 @@
+<Solution>
+    <Folder Name="/Solution Items/">
+        <File Path=".editorconfig" />
+        <File Path="Directory.Build.props" />
+        <File Path="Directory.Packages.props" />
+    </Folder>
+    <Folder Name="/SystemTools/">
+        <Project Path="../SystemTools/SystemTools.SharedKernel/SystemTools.SharedKernel.csproj" />
+        <Project Path="../SystemTools/SystemTools.SystemToolsShared/SystemTools.SystemToolsShared.csproj" />
+    </Folder>
+    <Project Path="TravelGuideCore.Application.Abstractions/TravelGuideCore.Application.Abstractions.csproj" />
+    <Project Path="TravelGuideCore.Domain/TravelGuideCore.Domain.csproj" />
+</Solution>

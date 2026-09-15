@@ -1,0 +1,17 @@
+using System;
+using TravelGuideCore.Domain.TaskModels;
+
+namespace TravelGuideCore.Domain.TaskStartPoints;
+
+public sealed class TaskStartPoint
+{
+    public int TspId { get; init; }
+    public int TaskId { get; init; }
+    public required string StartPoint { get; set; }
+
+    public TaskModel TaskNavigation
+    {
+        get => field ?? throw new InvalidOperationException("Uninitialized property: " + nameof(TaskNavigation));
+        init;
+    }
+}
