@@ -16,11 +16,14 @@ namespace TravelGuideCore.Domain.PlaceModels;
 public sealed class PlaceModel : ItemData
 {
     public int PlaceId { get; init; }
-    public required string Url { get; init; }
+
+    //მისამართი არასავალდებულოა: საიტიდან ჩამოტვირთულ ადგილს აქვს, ხელით შეყვანილს (საიტზე არარსებულს) — არა;
+    //უმისამართო ჩანაწერს ქროულერი არ ეხება
+    public string? Url { get; init; }
 
     //Url-ის დეტერმინისტული ხეშ-კოდი (StringExtension.GetDeterministicHashCode) — Url აღარ ინდექსირდება
-    //და ჩანაწერი ბაზაში ამ ველით იძებნება
-    public int UrlHashCode { get; init; }
+    //და ჩანაწერი ბაზაში ამ ველით იძებნება; უმისამართო ჩანაწერს ხეშ-კოდიც არ აქვს
+    public int? UrlHashCode { get; init; }
 
     public string? Name { get; set; }
 
