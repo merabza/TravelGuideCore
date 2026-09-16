@@ -2,7 +2,7 @@ namespace TravelGuideCore.Domain;
 
 public static class StringExtension
 {
-    //Url-ის დეტერმინისტული ხეშ-კოდი Places.UrlHashCode სვეტში ინახება და ჩანაწერის ხეშით მოსაძებნად გამოიყენება.
+    //Url-ის დეტერმინისტული ხეშ-კოდი Urls.UrlHashCode სვეტში ინახება და ჩანაწერის ხეშით მოსაძებნად გამოიყენება.
     //ალგორითმი Crawler პროექტის GetDeterministicHashCode-ის იდენტურია — string.GetHashCode-ისგან განსხვავებით
     //პროცესის ხელახალი გაშვებისას მნიშვნელობა არ იცვლება
     public static int GetDeterministicHashCode(this string str)
