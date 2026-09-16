@@ -9,6 +9,7 @@ using TravelGuideCore.Domain.PlacesByCategories;
 using TravelGuideCore.Domain.PlacesByLocations;
 using TravelGuideCore.Domain.PlacesByTags;
 using TravelGuideCore.Domain.RegionModels;
+using TravelGuideCore.Domain.UrlModels;
 
 namespace TravelGuideCore.Domain.PlaceModels;
 
@@ -18,12 +19,9 @@ public sealed class PlaceModel : ItemData
     public int PlaceId { get; init; }
 
     //მისამართი არასავალდებულოა: საიტიდან ჩამოტვირთულ ადგილს აქვს, ხელით შეყვანილს (საიტზე არარსებულს) — არა;
-    //უმისამართო ჩანაწერს ქროულერი არ ეხება
-    public string? Url { get; init; }
-
-    //Url-ის დეტერმინისტული ხეშ-კოდი (StringExtension.GetDeterministicHashCode) — Url აღარ ინდექსირდება
-    //და ჩანაწერი ბაზაში ამ ველით იძებნება; უმისამართო ჩანაწერს ხეშ-კოდიც არ აქვს
-    public int? UrlHashCode { get; init; }
+    //უმისამართო ჩანაწერს ქროულერი არ ეხება. თავად მისამართი და მისი ხეშ-კოდი Urls ცხრილის ჩანაწერია (UrlModel),
+    //რომელზეც ბმულების გრაფიც (UrlGraphNodes) მიუთითებს — ადგილს შექმნისას ერთხელ ებმება და მერე აღარ იცვლება
+    public int? UrlId { get; init; }
 
     public string? Name { get; set; }
 
@@ -34,6 +32,7 @@ public sealed class PlaceModel : ItemData
 
     public RegionModel? RegionNavigation { get; set; }
     public MunicipalityModel? MunicipalityNavigation { get; set; }
+    public UrlModel? UrlNavigation { get; init; }
 
     public ICollection<PlaceByBestSeason> BestSeasons { get; init; } = new HashSet<PlaceByBestSeason>();
     public ICollection<PlaceByCategory> Categories { get; init; } = new HashSet<PlaceByCategory>();

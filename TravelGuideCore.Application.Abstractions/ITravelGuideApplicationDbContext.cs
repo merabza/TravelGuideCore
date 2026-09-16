@@ -19,6 +19,7 @@ using TravelGuideCore.Domain.TagModels;
 using TravelGuideCore.Domain.TaskModels;
 using TravelGuideCore.Domain.TaskStartPoints;
 using TravelGuideCore.Domain.UrlGraphNodes;
+using TravelGuideCore.Domain.UrlModels;
 using TravelGuideCore.Domain.VisitImages;
 using TravelGuideCore.Domain.VisitModels;
 
@@ -45,6 +46,7 @@ public interface ITravelGuideApplicationDbContext
     DbSet<MunicipalityModel> Municipalities { get; }
     DbSet<MotorcycleModel> Motorcycles { get; }
     DbSet<UrlGraphNode> UrlGraphNodes { get; }
+    DbSet<UrlModel> Urls { get; }
     DbSet<VisitModel> Visits { get; }
     DbSet<VisitImage> VisitImages { get; }
     DbSet<RouteDistanceModel> RouteDistances { get; }
