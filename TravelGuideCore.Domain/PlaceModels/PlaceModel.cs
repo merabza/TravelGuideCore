@@ -19,8 +19,9 @@ public sealed class PlaceModel : ItemData
     public int PlaceId { get; init; }
 
     //მისამართი არასავალდებულოა: საიტიდან ჩამოტვირთულ ადგილს აქვს, ხელით შეყვანილს (საიტზე არარსებულს) — არა;
-    //უმისამართო ჩანაწერს ქროულერი არ ეხება. თავად მისამართი და მისი ხეშ-კოდი Urls ცხრილის ჩანაწერია (UrlModel),
-    //რომელზეც ბმულების გრაფიც (UrlGraphNodes) მიუთითებს — ადგილს შექმნისას ერთხელ ებმება და მერე აღარ იცვლება
+    //უმისამართო ჩანაწერს ქროულერი არ ეხება. თავად მისამართი, მისი ხეშ-კოდი და ქროულინგის სტატუსი (EState) Urls
+    //ცხრილის ჩანაწერია (UrlModel), რომელზეც ბმულების გრაფიც (UrlGraphNodes) მიუთითებს — ადგილს შექმნისას ერთხელ
+    //ებმება და მერე აღარ იცვლება
     public int? UrlId { get; init; }
 
     public string? Name { get; set; }
@@ -28,7 +29,6 @@ public sealed class PlaceModel : ItemData
     public int? RegionId { get; set; }
     public int? MunicipalityId { get; set; }
     public string? Description { get; set; }
-    public EState State { get; set; }
 
     public RegionModel? RegionNavigation { get; set; }
     public MunicipalityModel? MunicipalityNavigation { get; set; }
