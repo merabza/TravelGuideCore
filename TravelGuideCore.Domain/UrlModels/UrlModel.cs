@@ -11,4 +11,8 @@ public sealed class UrlModel
     //Url-ის დეტერმინისტული ხეშ-კოდი (StringExtension.GetDeterministicHashCode) — Url არ ინდექსირდება
     //და ჩანაწერი ბაზაში ამ ველით იძებნება
     public int UrlHashCode { get; init; }
+
+    //მისამართის ქროულინგის მდგომარეობა (ჩამოსატვირთი, გაანალიზებული, ...) — სტატუსი მისამართისაა და არა ადგილის:
+    //უმისამართო (ხელით შეყვანილ) ადგილს სტატუსი არ აქვს. ბაზაში int-ად ინახება
+    public EState State { get; set; }
 }
