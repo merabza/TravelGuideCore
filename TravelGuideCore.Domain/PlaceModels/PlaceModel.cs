@@ -20,8 +20,9 @@ public sealed class PlaceModel : ItemData
 
     //მისამართი არასავალდებულოა: საიტიდან ჩამოტვირთულ ადგილს აქვს, ხელით შეყვანილს (საიტზე არარსებულს) — არა;
     //უმისამართო ჩანაწერს ქროულერი არ ეხება. თავად მისამართი, მისი ხეშ-კოდი და ქროულინგის სტატუსი (EState) Urls
-    //ცხრილის ჩანაწერია (UrlModel), რომელზეც ბმულების გრაფიც (UrlGraphNodes) მიუთითებს — ადგილს შექმნისას ერთხელ
-    //ებმება და მერე აღარ იცვლება
+    //ცხრილის ჩანაწერია (UrlModel), რომელზეც ბმულების გრაფიც (UrlGraphNodes) მიუთითებს — ადგილს ერთხელ ებმება
+    //(ქროულერისგან შექმნისას, ხელით შეყვანილს — მოგვიანებით, რედაქტორის Url ველით, ამიტომ UrlNavigation-ს set
+    //აქვს; UrlId-ს ნავიგაციიდან EF ავსებს) და მერე აღარ იცვლება
     public int? UrlId { get; init; }
 
     public string? Name { get; set; }
@@ -32,7 +33,7 @@ public sealed class PlaceModel : ItemData
 
     public RegionModel? RegionNavigation { get; set; }
     public MunicipalityModel? MunicipalityNavigation { get; set; }
-    public UrlModel? UrlNavigation { get; init; }
+    public UrlModel? UrlNavigation { get; set; }
 
     public ICollection<PlaceByBestSeason> BestSeasons { get; init; } = new HashSet<PlaceByBestSeason>();
     public ICollection<PlaceByCategory> Categories { get; init; } = new HashSet<PlaceByCategory>();
